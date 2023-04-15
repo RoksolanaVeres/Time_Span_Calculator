@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Time measure</title>
+  </head>
+  <body>
+    <header>Time Span Calculator</header>
+
+    <div class="container">
+      <div class="dates-image-quote_container">
+        <div class="dates-settings_container">
+          <div class="dates">
+            <div class="start-date-container">
+              <label for="startDate" class="label start-date_label"
+                >Start date:</label
+              >
+              <input type="date" id="startDate" onkeydown="return false" />
+            </div>
+            <div class="end-date-container">
+              <label for="endDate" class="label end-date_label"
+                >End date:</label
+              >
+              <input
+                type="date"
+                id="endDate"
+                onkeydown="return false"
+                disabled
+              />
+            </div>
+          </div>
+          <div class="reset-presets-buttons_container">
+            <button class="button" id="reset">Reset dates</button>
+            <div class="presets">
+              <button class="button" id="weekPreset">Add week</button>
+              <button class="button" id="monthPreset">Add month</button>
+            </div>
+          </div>
+
+          <div class="days-taken-into-account-container">
+            <p class="label days-taken-into-account-label">
+              Days you want to take into account:
+            </p>
+
+            <div>
+              <input
+                type="radio"
+                id="all-days"
+                name="days-taken-into-account"
+                value="all_days"
+                checked
+              />
+              <label for="all-days">All days</label>
+            </div>
+
+            <div>
+              <input
+                type="radio"
+                id="workdays"
+                name="days-taken-into-account"
+                value="workdays"
+              />
+              <label for="workdays">Workdays</label>
+            </div>
+
+            <div>
+              <input
+                type="radio"
+                id="weekends"
+                name="days-taken-into-account"
+                value="weekends"
+              />
+              <label for="weekends">Weekends</label>
+            </div>
+          </div>
+          <div class="counting-units-container">
+            <label for="counting_units-select" class="label"
+              >Counting units</label
+            >
+
+            <select name="counting_units" id="counting_units-select">
+              <option value="days">days</option>
+              <option value="hours">hours</option>
+              <option value="minutes">minutes</option>
+              <option value="seconds">seconds</option>
+            </select>
+          </div>
+
+          <div class="calculate-clear_buttons">
+            <button class="button" id="calculate" disabled>Calculate</button>
+            <button class="button" id="clear-results">Clear all results</button>
+          </div>
+          <p class="label result-line">
+            Result: <span id="result-line" class="result-span"></span>
+          </p>
+        </div>
+        <div class="image_container"></div>
+        <div class="quote_container">
+          <p id="quote-text">
+            "Better three hours too soon than a minute too late."
+          </p>
+          <p id="quote-author">William Shakespeare</p>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table id="results-table">
+          <tr>
+            <th>Start date</th>
+            <th>End date</th>
+            <th>Result</th>
+            <th>Days taken into account</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script src="javascript.js"></script>
+  </body>
+</html>
